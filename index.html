@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上選擇題系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="role-selector">
+            <button onclick="showTeacherSection()">教師入口</button>
+            <button onclick="showStudentSection()">學生入口</button>
+        </div>
+
+        <div id="teacherSection" style="display: none;">
+            <h2>教師區域</h2>
+            <input type="file" id="excelFile" accept=".xlsx, .xls">
+            <button onclick="loadQuestions()">載入題目</button>
+        </div>
+
+        <div id="studentSection" style="display: none;">
+            <h2>學生作答區</h2>
+            <div id="questionContainer"></div>
+            <button onclick="submitQuiz()">提交答案</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
